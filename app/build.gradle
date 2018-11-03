@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "28.0.3"
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "net.sourceforge.simcpux"
+        minSdkVersion 19
+        targetSdkVersion 25
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    //    implementation files('libs/libammsdk.jar')
+    //    implementation files('libs/wechat-sdk-android-with-mta-1.0.2.jar')
+        implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+}
